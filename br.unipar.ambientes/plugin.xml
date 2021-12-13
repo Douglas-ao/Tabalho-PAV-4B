@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="br.unipar.ambientes.aplicacao.interno.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="br.unipar.ambientes.perspective.Perspective"
+            id="br.unipar.ambientes.perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.equinox.p2.publisher.EclipseGenerator"
+            name="Ambientes Visuais - Unipar">
+         <property
+               name="appName"
+               value="Ambientes Visuais - Unipar">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="br.unipar.ambientes.telas.view.ExemploView"
+            id="br.unipar.ambientes.telas.view.ExemploView"
+            name="Exemplos">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               id="br.unipar.ambientes.arquivo"
+               label="Arquivo">
+            <command
+                  commandId="org.eclipse.ui.file.exit"
+                  id="br.unipar.ambientes.sair"
+                  label="Sair">
+            </command>
+         </menu>
+         <menu
+               id="br.unipar.ambientes.cadastro"
+               label="Cadastro">
+            <command
+                  commandId="br.unipar.ambientes.openExemploCommand"
+                  icon="assets/funcoes/aboutFlag16.png"
+                  id="br.unipar.ambientes.cadastro.exemplo"
+                  label="Exemplo"
+                  style="push">
+            </command>
+            <command
+                  commandId="br.unipar.ambientes.exemploTrabalhoDialogCommand"
+                  icon="assets/funcoes/bookmarkHelp16.png"
+                  id="br.unipar.ambientes.cadastro.exemploTrabalho"
+                  label="Exemplo TRABALHO"
+                  style="push">
+            </command>
+            <command
+                  commandId="br.unipar.ambientes.abrirCadastroCommand"
+                  label="Aluno"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="br.unipar.ambientes.telas.editor.ExemploEditor"
+            id="br.unipar.ambientes.telas.editor.ExemploEditor"
+            name="Exemplo">
+      </editor>
+      <editor
+            class="br.unipar.ambientes.telas.editor.CadastroEditor"
+            id="br.unipar.ambientes.telas.editor.CadastroEditor"
+            name="Cadastro aluno">
+      </editor>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="br.unipar.ambientes.application"
+            name="Aplicação exemplo">
+         <property
+               name="appName"
+               value="Aplicação exemplo">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="br.unipar.ambientes.aplicacao.command.OpenExemploCommand"
+            id="br.unipar.ambientes.openExemploCommand"
+            name="Exemplos commnads">
+      </command>
+      <command
+            defaultHandler="br.unipar.ambientes.aplicacao.command.OpenExemploTrabalhoDialogCommand"
+            id="br.unipar.ambientes.exemploTrabalhoDialogCommand"
+            name="Exemplo Trabalho">
+      </command>
+      <command
+            defaultHandler="br.unipar.ambientes.aplicacao.command.EscPressionadoCommand"
+            id="br.unipar.ambientes.escPressionadoCommand"
+            name="ESC">
+      </command>
+      <command
+            defaultHandler="br.unipar.ambientes.aplicacao.command.OpenCadastroEditor"
+            id="br.unipar.ambientes.abrirCadastroCommand"
+            name="Abrir Cadastro">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <scheme
+            description="Pra poder bindar os campos"
+            id="unipar.scheme"
+            name="UNIPAR Scheme"
+            parentId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </scheme>
+      <key
+            commandId="br.unipar.ambientes.escPressionadoCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="unipar.scheme"
+            sequence="ESC">
+      </key>
+   </extension>
+
+</plugin>

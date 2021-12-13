@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="Ambientes Visuais - Unipar" uid="br.unipar.ambientes.product" id="br.unipar.ambientes.product" application="br.unipar.ambientes.application" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="true">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
+   </launcherArgs>
+
+   <windowImages/>
+
+   <plugins>
+      <plugin id="br.unipar.ambientes"/>
+      <plugin id="org.eclipse.rcp"/>
+   </plugins>
+
+
+</product>

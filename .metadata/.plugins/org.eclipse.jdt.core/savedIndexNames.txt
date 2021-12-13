@@ -1,0 +1,12 @@
+INDEX VERSION 1.130+C:\Users\Douglas Oliveira\Downloads\ambientes-visuais-00212602-00212045\ambientes-visuais-00212602-00212045\.metadata\.plugins\org.eclipse.jdt.core
+1730634889.index
+564410690.index
+1485825867.index
+73208610.index
+3213485599.index
+3472712448.index
+3528346643.index
+2304846057.index
+2568956678.index
+221489244.index
+1598985534.index
